@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-// import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';;
-import * as firebase from 'firebase/app'
+// import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 import { map, take } from 'rxjs/operators';
 
 
@@ -15,17 +15,17 @@ export class AuthService {
     // this.afAuth.authState.subscribe(data => this.authState = data)
    }
 
-  // loginTwitter () {
-  //   return this.afAuth.auth.signInWithPopup( new firebase.auth.TwitterAuthProvider());
-  // }
+//   loginTwitter () {
+//     return this.afAuth.auth.signInWithPopup( new firebase.auth.TwitterAuthProvider());
+//   }
 
-  // loginFacebook() {
-  //   return this.afAuth.auth.signInWithPopup( new firebase.auth.FacebookAuthProvider());
-  // }
+//   loginFacebook() {
+//     return this.afAuth.auth.signInWithPopup( new firebase.auth.FacebookAuthProvider());
+//   }
 
-  // loginGoogle() {
-  //   return this.afAuth.auth.signInWithPopup( new firebase.auth.GoogleAuthProvider());
-  // }
+//   loginGoogle() {
+//     return this.afAuth.auth.signInWithPopup( new firebase.auth.GoogleAuthProvider());
+//   }
 
 //   registerUser(email: string, pass: string) {
 //     return new Promise((resolve, reject) => {

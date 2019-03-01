@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import {AuthService } from '../../services/auth.service';
+import {AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   public fotoUsuario: string;
 
   constructor(
-    // public authService: AuthService
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
