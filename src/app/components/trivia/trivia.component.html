@@ -1,0 +1,45 @@
+<header>
+  <div class="title_trivia">
+    <h1 class="title_h1">Trivia 2018</h1>
+  </div>
+</header>
+<!-- <div class="separador"><h1 style="height: 2rem;"></h1></div> -->
+<main>
+  <div class="players_pic">
+    <div *ngFor="let player of players; let i=index">
+      <div class="img_picture_box" [ngClass]="'pic_'+ (i+1)">
+        <a routerLink="/playerinfo/{{player.code}}">
+
+          <img class="img_picture_element" [ngClass]="'img_pic_'+ (i+1)" (click)='textChange(i)' [src]="'../../../assets/'  + player.code + '.jpg'"
+            alt="Player Image" data-hover="tooltip" data-placement="top" title="Pincha para ver Biografía"></a>
+      </div>
+
+      <div [ngClass]="'text_'+ (i+1)">
+        <div *ngIf="player.activo" data-hover="tooltip" data-placement="bottom" title="Pincha para  Responder">
+          <p class="text_11" (click)='textChange(i)'>{{player.pregunta}}</p>
+        </div>
+        <div class="respuesta" *ngIf="!player.activo" >
+          <form >
+              <input [(ngModel)]="answer[i]" type="radio" name='answer'  value="{{player.opcion1}}" (click)='respDada(i)'> {{player.opcion1}}<br>
+              <input [(ngModel)]="answer[i]" type="radio" name='answer' value="{{player.opcion2}}" (click)='respDada(i)'> {{player.opcion2}}<br>
+              <input [(ngModel)]="answer[i]" type="radio" name='answer' value="{{player.opcion3}}" (click)='respDada(i)'> {{player.opcion3}}<br>  
+
+            </form>
+
+          <!-- <p class="text_12" (click)='textChange(i)'>{{player.respuesta}}</p> -->
+        </div>
+      <div *ngIf='!respuesta_def[i]' > 
+        <!-- <p>Seleccion {{answer[i]}}</p>
+        <p>resp Correcta {{player.respuesta}}</p> -->
+      <div class="respuesta_dada respuesta" *ngIf='answer[i] == player.respuesta; else other_answer'>
+          <p>Respuesta Correcta!.</p><br>
+        </div> 
+        <ng-template #other_answer > 
+            <p class="respuesta">Respuesta Incorrecta, era: {{player.respuesta}}</p>
+        </ng-template>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</main>
